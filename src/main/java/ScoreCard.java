@@ -108,15 +108,21 @@ public class ScoreCard {
     }
 
     public Integer getYahtzeeBonuses() {
-        return yahtzeeBonuses;
+        if (yahtzeeBonuses==null) return 0;
+        else return yahtzeeBonuses;
     }
 
     public Integer getLowerTotal() {
-        return lowerTotal;
+        if (getThreeOfAKind()!=null && getFourOfAKind()!=null && getFullHouse()!=null &&
+            getSmallStraight()!=null && getLargeStraight()!=null && getYahtzee()!=null && getChance()!=null){
+            return threeOfAKind + fourOfAKind + fullHouse + smallStraight + largeStraight + yahtzee + chance + (getYahtzeeBonuses()*100);
+        }
+        else return null;
     }
 
     public Integer getGrandTotal() {
-        return grandTotal;
+        if (getUpperTotal()==null || getLowerTotal()==null) return null;
+        else return getLowerTotal() + getUpperTotal();
     }
 
     // set values/calculate scores
