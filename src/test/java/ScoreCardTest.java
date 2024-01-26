@@ -118,10 +118,18 @@ class ScoreCardTest {
 
     @Test
     void setSmallStraight() {
+        int[] smallStraight = new int[]{1,6,3,2,4};
+        ScoreCard testCard = ScoreCard.newScoreCard();
+        testCard.setSmallStraight(smallStraight);
+        assertEquals(30, testCard.getSmallStraight());
     }
 
     @Test
     void setLargeStraight() {
+        int[] largeStraight = new int[]{6,2,4,3,5};
+        ScoreCard testCard = ScoreCard.newScoreCard();
+        testCard.setLargeStraight(largeStraight);
+        assertEquals(40, testCard.getLargeStraight());
     }
 
     @Test
@@ -134,6 +142,10 @@ class ScoreCardTest {
 
     @Test
     void setChance() {
+        int[] chance = new int[]{4,4,6,2,1};
+        ScoreCard testCard = ScoreCard.newScoreCard();
+        testCard.setChance(chance);
+        assertEquals(17, testCard.getChance());
     }
 
     @Test

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ScoreCard {
 
@@ -60,15 +63,19 @@ public class ScoreCard {
     }
 
     public Integer getUpperScore() {
-        return upperScore;
+
+        return (aces + twos + threes + fours + fives + sixes);
     }
 
     public Integer getUpperBonus() {
-        return upperBonus;
+
+        if (getUpperScore()>=63) return 35;
+        else return 0;
     }
 
     public Integer getUpperTotal() {
-        return upperTotal;
+
+        return getUpperScore() + getUpperBonus();
     }
 
     public Integer getThreeOfAKind() {
@@ -181,6 +188,7 @@ public class ScoreCard {
     }
 
     public void setFullHouse(int[] diceValues) {
+        // three of a kind and two of a kind
         boolean match3=false;
         boolean match2 =false;
         for (int i=1; i<=6; i++) {
@@ -195,12 +203,26 @@ public class ScoreCard {
         else fullHouse = 0;
     }
 
-    public void setSmallStraight(Integer smallStraight) {
-        this.smallStraight = smallStraight;
+    public void setSmallStraight(int[] diceValues) {
+        List<Integer> straight1 = List.of(1,2,3,4);
+        List<Integer> straight2 = List.of(2,3,4,5);
+        List<Integer> straight3 = List.of(3,4,5,6);
+
+        Arrays.sort(diceValues);
+        List<Integer> diceValuesList = List.of(diceValues[0],diceValues[1],diceValues[2],diceValues[3],diceValues[4]);
+        if (diceValuesList.containsAll(straight1) || diceValuesList.containsAll(straight2) || diceValuesList.containsAll(straight3)) {
+            smallStraight = 30;
+        } else smallStraight = 0;
     }
 
-    public void setLargeStraight(Integer largeStraight) {
-        this.largeStraight = largeStraight;
+    public void setLargeStraight(int[] diceValues) {
+        List<Integer> straight1 = List.of(1,2,3,4,5);
+        List<Integer> straight2 = List.of(2,3,4,5,6);
+        Arrays.sort(diceValues);
+        List<Integer> diceValuesList = List.of(diceValues[0],diceValues[1],diceValues[2],diceValues[3],diceValues[4]);
+        if (diceValuesList.containsAll(straight1) || diceValuesList.containsAll(straight2)) {
+            largeStraight = 40;
+        } else largeStraight = 0;
     }
 
     public void setYahtzee(int[] diceValues) {
@@ -217,13 +239,5 @@ public class ScoreCard {
         if (countNumberOfAKind(diceValues, diceValues[0])==5 && yahtzee==50) {
             yahtzeeBonuses = yahtzeeBonuses + 1;
         }
-    }
-
-    public void setLowerTotal(Integer lowerTotal) {
-        this.lowerTotal = lowerTotal;
-    }
-
-    public void setGrandTotal(Integer grandTotal) {
-        this.grandTotal = grandTotal;
     }
 }
