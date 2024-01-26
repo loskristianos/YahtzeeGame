@@ -63,19 +63,20 @@ public class ScoreCard {
     }
 
     public Integer getUpperScore() {
-
-        return (aces + twos + threes + fours + fives + sixes);
+        if (aces!=null && twos!=null && threes!=null && fours!=null && fives!=null && sixes!=null ) {
+            return (aces + twos + threes + fours + fives + sixes);
+        } else return null;
     }
 
     public Integer getUpperBonus() {
-
-        if (getUpperScore()>=63) return 35;
+        if (getUpperScore()==null) return null;
+        else if (getUpperScore()>=63) return 35;
         else return 0;
     }
 
     public Integer getUpperTotal() {
-
-        return getUpperScore() + getUpperBonus();
+        if (getUpperScore()==null || getUpperBonus()==null) return null;
+        else return getUpperScore() + getUpperBonus();
     }
 
     public Integer getThreeOfAKind() {
