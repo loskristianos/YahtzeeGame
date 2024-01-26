@@ -5,6 +5,16 @@ public class Player {
     Integer totalScore;
     Integer numberOfTurns;
 
+    private Player(){}
+
+    public static Player startNewGame(){
+        Player player = new Player();
+        player.setScoreCard(ScoreCard.newScoreCard());
+        player.setNumberOfTurns(0);
+        return player;
+    }
+
+
     public String getName() {
         return name;
     }
