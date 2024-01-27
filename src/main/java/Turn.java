@@ -10,11 +10,11 @@ import java.util.stream.IntStream;
 
 public class Turn{
 
-    Player player;
-    int rollCount;          // number of rolls taken this turn
-    int[] diceValues;       // face values of all 5 dice (updated after each roll)
-    int diceHeld;           // number of dice held back (updated for each roll)
-    int[] heldDiceValues;   // face values of the dice held back (updated for each roll)
+    private Player player;
+    private int rollCount;          // number of rolls taken this turn
+    private int[] diceValues;       // face values of all 5 dice (updated after each roll)
+    private int diceHeld;           // number of dice held back (updated for each roll)
+    private int[] heldDiceValues;   // face values of the dice held back (updated for each roll)
 
     private Turn(){}
 
