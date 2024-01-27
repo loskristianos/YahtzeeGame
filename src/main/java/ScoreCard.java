@@ -247,4 +247,22 @@ public class ScoreCard {
             yahtzeeBonuses = yahtzeeBonuses + 1;
         }
     }
+
+    public void setScore(int section, int[] diceValues){
+        switch (section) {
+            case 1: setAces(diceValues); break;
+            case 2: setTwos(diceValues); break;
+            case 3: setThrees(diceValues); break;
+            case 4: setFours(diceValues); break;
+            case 5: setFives(diceValues); break;
+            case 6: setSixes(diceValues); break;
+            case 7: setThreeOfAKind(diceValues); break;
+            case 8: setFourOfAKind(diceValues); break;
+            case 9: setFullHouse(diceValues); break;
+            case 10: setSmallStraight(diceValues); break;
+            case 11: setLargeStraight(diceValues); break;
+            case 12: setYahtzee(diceValues);break;
+            case 13: setChance(diceValues); break;
+        }
+    }
 }
