@@ -27,6 +27,8 @@ public class Game {
     }
 
     public void play(){
+        UserDisplay userDisplay = new UserDisplay();
+        UserPrompt userPrompt = new UserPrompt();
         turnCount = 1;
         while (turnCount < 14) {
             Turn turn = Turn.startNewTurn(player);
