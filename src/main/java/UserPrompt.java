@@ -17,8 +17,8 @@ public class UserPrompt {
     }
 
     public int[] chooseDice(){
-        System.out.print("Please choose which dice (if any) you would like to keep for your next roll;/n" +
-                "enter the number (1-5) for each dice, separated by a space. Enter '0' to roll all five dice again. Enter '9' to keep all dice and record a score for this turn.");
+        System.out.print("Please choose which dice (if any) you would like to keep for your next roll;\n" +
+                "enter the number (1-5) for each dice, separated by a comma. \nEnter '0' to roll all five dice again. Enter '9' to keep all dice and record a score for this turn.");
         List<Integer> list = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         input.useDelimiter(" ");
