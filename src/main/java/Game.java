@@ -54,5 +54,7 @@ public class Game {
             // set score
             setTurnCount(turnCount+1);
         }
+        System.out.println("End of game. Here is your final score.");
+        userDisplay.displayScoreCard(player.getScoreCard());
     }
 }
