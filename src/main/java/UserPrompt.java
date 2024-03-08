@@ -21,7 +21,6 @@ public class UserPrompt {
                 "enter the number (1-5) for each dice, separated by a comma. \nEnter '0' to roll all five dice again. Enter '9' to keep all dice and record a score for this turn.");
         List<Integer> list = new ArrayList<>();
         Scanner input = new Scanner(System.in);
-        input.useDelimiter(" ");
         while (input.hasNext()){
             list.add(input.nextInt()-1);        // user input is 1-5, we want 0-4 for the array index
         }
