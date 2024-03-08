@@ -22,7 +22,7 @@ public class UserDisplay {
         System.out.println("============");
         System.out.println("Lower Section");
         System.out.println("3 of a Kind: " + scoreCard.getThreeOfAKind());
-        System.out.println("4 of a Kind" + scoreCard.getFourOfAKind());
+        System.out.println("4 of a Kind: " + scoreCard.getFourOfAKind());
         System.out.println("Full House: " + scoreCard.getFullHouse());
         System.out.println("Small Straight: " + scoreCard.getSmallStraight());
         System.out.println("Large Straight: " + scoreCard.getLargeStraight());
