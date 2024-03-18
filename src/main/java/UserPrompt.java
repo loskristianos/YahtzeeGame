@@ -10,23 +10,17 @@ public class UserPrompt {
         return input.next().toLowerCase();
     }
 
-    public String holdDice(){
-        Scanner input = new Scanner(System.in);
-        System.out.print("Would you like to keep any of these dice for your next roll? (y/n)");
-        return input.next().toLowerCase();
-    }
-
-    public int[] chooseDice(){
-        System.out.print("Please choose which dice (if any) you would like to keep for your next roll;\n" +
-                "enter the number (1-5) for each dice, separated by a space (e.g. to keep the first and third dice, enter 1 3). \nEnter '0' to roll all five dice again. Enter '9' to keep all dice and record a score for this turn.");
+    public Integer[] chooseDiceToRoll() {
+        System.out.print("Please choose which dice (if any) you would like to roll again;\n" +
+                "enter the number (1-5) for each dice, separated by a space (e.g. to roll the first and third dice, enter 1 3). \nEnter '0' to roll all five dice again. Enter '9' to keep all dice and record a score for this turn.");
         List<Integer> list = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         String enteredNumbers = input.nextLine();
         Scanner numbersToSplit = new Scanner(enteredNumbers);
-        while (numbersToSplit.hasNext()){
-            list.add(numbersToSplit.nextInt()-1);        // user input is 1-5, we want 0-4 for the array index
+        while (numbersToSplit.hasNext()) {
+            list.add(numbersToSplit.nextInt());
         }
-        return list.stream().mapToInt(i -> i).toArray();
+        return (Integer[]) list.toArray();
     }
 
     public int scoreCardSection(){
@@ -34,4 +28,5 @@ public class UserPrompt {
         Scanner input = new Scanner(System.in);
         return input.nextInt();
     }
+
 }
