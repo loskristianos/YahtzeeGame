@@ -5,77 +5,87 @@
     second/third roll. After the third roll the five dice must be used for scoring.
  */
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
-public class Turn{
+public class Turn {
 
     private Player player;
-    private int rollCount;          // number of rolls taken this turn
-    private int[] diceValues;       // face values of all 5 dice (updated after each roll)
-    private int diceHeld;           // number of dice held back (updated for each roll)
-    private int[] heldDiceValues;   // face values of the dice held back (updated for each roll)
+    private Integer rollCount;
+    private Dice dice1;
+    private Dice dice2;
+    private Dice dice3;
+    private Dice dice4;
+    private Dice dice5;
+    private Integer[] diceValues;
 
-    private Turn(){}
+    private Turn(){
+    }
 
     public static Turn startNewTurn(Player player){
         Turn newTurn = new Turn();
         newTurn.setPlayer(player);
         return newTurn;
     }
-
-    private void setPlayer(Player player) {
+    private void setPlayer(Player player){
         this.player = player;
     }
 
-    public int getRollCount(){
+    public Integer getRollCount(){
         return rollCount;
     }
 
-    public int[] getDiceValues(){
+    public Integer[] getDiceValues(){
         return diceValues;
     }
 
-    public int[] getHeldDiceValues(){
-        return heldDiceValues;
+    public Integer getDice1Value(){
+        return dice1.getValue();
     }
 
-    public int getDiceHeld() {
-        return diceHeld;
+    public Integer getDice2Value(){
+        return dice2.getValue();
+    }
+
+    public Integer getDice3Value(){
+        return dice3.getValue();
+    }
+
+    public Integer getDice4Value(){
+        return dice4.getValue();
+    }
+
+    public Integer getDice5Value(){
+        return dice5.getValue();
     }
 
     public void firstRoll(){
-        DiceRoll firstDiceRoll = DiceRoll.rollDice(5);
+        dice1 = DiceFactory.newDice();
+        dice2 = DiceFactory.newDice();
+        dice3 = DiceFactory.newDice();
+        dice4 = DiceFactory.newDice();
+        dice5 = DiceFactory.newDice();
         rollCount = 1;
-        diceValues = firstDiceRoll.getDiceValues();
+        diceValues = new Integer[5];
+        updateDiceValues();
     }
 
-    public void secondRoll(){
-        DiceRoll secondDiceRoll = DiceRoll.rollDice(5-diceHeld);
-        int[] result = secondDiceRoll.getDiceValues();
-        rollCount = 2;
-        if (diceHeld > 0) {
-            diceValues = IntStream.concat(Arrays.stream(heldDiceValues), Arrays.stream(result)).toArray();
+    public void nextRoll(Integer[] diceToRoll){
+        for (int i=0; i < diceToRoll.length; i++){
+            switch (diceToRoll[i]){
+                case 1: dice1.roll();
+                case 2: dice2.roll();
+                case 3: dice3.roll();
+                case 4: dice4.roll();
+                case 5: dice5.roll();
+            }
         }
-        else diceValues = result;
+        updateDiceValues();
+        rollCount = rollCount + 1;
     }
 
-    public void thirdRoll(){
-        DiceRoll thirdDiceRoll = DiceRoll.rollDice(5-diceHeld);
-        rollCount = 3;
-        int[] result = thirdDiceRoll.getDiceValues();
-        if (diceHeld > 0) {
-            diceValues = IntStream.concat(Arrays.stream(heldDiceValues), Arrays.stream(result)).toArray();
-        }
-        else diceValues = result;
-    }
-
-    public void holdDice(int[] diceToHold){
-        diceHeld = diceToHold.length;
-        int[] heldValues = new int[diceHeld];
-        for (int i = 0; i < diceToHold.length; i++){
-            heldValues[i] = diceValues[diceToHold[i]];
-        }
-        heldDiceValues = heldValues.clone();
+    private void updateDiceValues(){
+        diceValues[0] = dice1.getValue();
+        diceValues[1] = dice2.getValue();
+        diceValues[2] = dice3.getValue();
+        diceValues[3] = dice4.getValue();
+        diceValues[4] = dice5.getValue();
     }
 }
