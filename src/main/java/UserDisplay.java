@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class UserDisplay {
 
-    public void displayDice(int[] diceValues){
+    public void displayDice(Integer[] diceValues){
         // display face values of rolled dice to user
         System.out.println(Arrays.toString(diceValues));
     }
