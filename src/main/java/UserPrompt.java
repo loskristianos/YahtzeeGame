@@ -10,7 +10,7 @@ public class UserPrompt {
         return input.next().toLowerCase();
     }
 
-    public Integer[] chooseDiceToRoll() {
+    public List<Integer> chooseDiceToRoll() {
         System.out.print("Please choose which dice (if any) you would like to roll again;\n" +
                 "enter the number (1-5) for each dice, separated by a space (e.g. to roll the first and third dice, enter 1 3). \nEnter '0' to roll all five dice again. Enter '9' to keep all dice and record a score for this turn.");
         List<Integer> list = new ArrayList<>();
@@ -20,7 +20,7 @@ public class UserPrompt {
         while (numbersToSplit.hasNext()) {
             list.add(numbersToSplit.nextInt());
         }
-        return (Integer[]) list.toArray();
+        return list;
     }
 
     public int scoreCardSection(){
