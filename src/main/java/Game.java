@@ -33,13 +33,13 @@ public class Game {
         while (turnCount < 14) {
             Turn turn = Turn.startNewTurn(player);
             turn.firstRoll();
-            userDisplay.displayDice(turn.getDiceValues());
+            userDisplay.displayDice(turn);
             if (userPrompt.rollAgain().equals("y")) {
                 turn.nextRoll(userPrompt.chooseDiceToRoll());
-                userDisplay.displayDice(turn.getDiceValues());
+                userDisplay.displayDice(turn);
                 if (userPrompt.rollAgain().equals("y")) {
                     turn.nextRoll(userPrompt.chooseDiceToRoll());
-                    userDisplay.displayDice(turn.getDiceValues());
+                    userDisplay.displayDice(turn);
                 }
             }
             userDisplay.displayScoreCard(player.getScoreCard());

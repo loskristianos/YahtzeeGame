@@ -2,9 +2,12 @@ import java.util.Arrays;
 
 public class UserDisplay {
 
-    public void displayDice(Integer[] diceValues){
-        // display face values of rolled dice to user
-        System.out.println(Arrays.toString(diceValues));
+    public void displayDice(Turn turn){
+        System.out.println("Dice 1: " + turn.getDice1Value());
+        System.out.println("Dice 2: " + turn.getDice2Value());
+        System.out.println("Dice 3: " + turn.getDice3Value());
+        System.out.println("Dice 4: " + turn.getDice4Value());
+        System.out.println("Dice 5: " + turn.getDice5Value());
     }
 
     public void displayScoreCard(ScoreCard scoreCard){
