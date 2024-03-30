@@ -20,10 +20,11 @@ class TurnTest {
 
     @Test
     void getDiceValues() {
+        // test that method returns an array of five values each between 1 and 6 inclusive
         Player x = Player.startNewGame();
         Turn turn = Turn.startNewTurn(x);
         turn.firstRoll();
-        int[] diceValues = turn.getDiceValues();
+        Integer[] diceValues = turn.getDiceValues();
         assertEquals(5, diceValues.length);
         for (int i = 0; i < diceValues.length; i++){
             assertTrue(diceValues[i] > 0);
@@ -40,12 +41,14 @@ class TurnTest {
         assertEquals(5, turn.getDiceValues().length);
     }
 
+
     @Test
     void secondRoll() {
         Player x = Player.startNewGame();
         Turn turn = Turn.startNewTurn(x);
+        Integer[] diceToRoll = new Integer[]{1,2,3,4,5};
         turn.firstRoll();
-        turn.secondRoll();
+        turn.nextRoll(diceToRoll);
         assertEquals(2, turn.getRollCount());
         assertEquals(5, turn.getDiceValues().length);
     }
@@ -54,24 +57,12 @@ class TurnTest {
     void thirdRoll() {
         Player x = Player.startNewGame();
         Turn turn = Turn.startNewTurn(x);
+        Integer[] diceToRoll = new Integer[]{1,2,3,4,5};
         turn.firstRoll();
-        turn.secondRoll();
-        turn.thirdRoll();
+        turn.nextRoll(diceToRoll);
+        turn.nextRoll(diceToRoll);
         assertEquals(3, turn.getRollCount());
         assertEquals(5, turn.getDiceValues().length);
     }
 
-    @Test
-    void holdDice() {
-        int[] diceToHold = new int[]{1,3};
-        Player x = Player.startNewGame();
-        Turn turn = Turn.startNewTurn(x);
-        turn.firstRoll();
-        turn.holdDice(diceToHold);
-        int[] heldDiceValues = turn.getHeldDiceValues();
-        int[] diceValues = turn.getDiceValues();
-        int[] expectedResult = new int[]{diceValues[1],diceValues[3]};
-        assertArrayEquals(expectedResult, heldDiceValues);
-        assertEquals(2, turn.getDiceHeld());
-    }
 }

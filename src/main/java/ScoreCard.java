@@ -1,10 +1,10 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ScoreCard {
 
-    // upper section scores - declared as Integer (rather than int) so they can be initialized as null
+    // upper section scores
+
     private Integer aces;
     private Integer twos;
     private Integer threes;
@@ -15,7 +15,8 @@ public class ScoreCard {
     private Integer upperBonus;
     private Integer upperTotal;
 
-    // lower section
+    // lower section scores
+
     private Integer threeOfAKind;
     private Integer fourOfAKind;
     private Integer fullHouse;
@@ -114,7 +115,7 @@ public class ScoreCard {
 
     public Integer getLowerTotal() {
         if (getThreeOfAKind()!=null && getFourOfAKind()!=null && getFullHouse()!=null &&
-            getSmallStraight()!=null && getLargeStraight()!=null && getYahtzee()!=null && getChance()!=null){
+                getSmallStraight()!=null && getLargeStraight()!=null && getYahtzee()!=null && getChance()!=null){
             return threeOfAKind + fourOfAKind + fullHouse + smallStraight + largeStraight + yahtzee + chance + (getYahtzeeBonuses()*100);
         }
         else return null;
@@ -125,58 +126,58 @@ public class ScoreCard {
         else return getLowerTotal() + getUpperTotal();
     }
 
-    // set values/calculate scores
-    private int calculateUpperScores(int[] diceValues, int faceValue) {
+    // set values / calculate scores
+
+    private Integer calculateUpperScores(Integer[] diceValues, Integer faceValue){
         // calculate the score for each of the upper sections (sum of matching face values for section)
-        int score = 0;
-        for (int i=0; i<5; i++){
-            if (diceValues[i]==faceValue) score = score + faceValue;
+        Integer score = 0;
+        for (int i=0; i<5; i++) {
+            if (diceValues[i] == faceValue) score = score + faceValue;
         }
         return score;
     }
 
-
-    public void setAces(int[] diceValues) {
+    public void setAces(Integer[] diceValues){
         aces = calculateUpperScores(diceValues, 1);
     }
 
-    public void setTwos(int[] diceValues) {
+    public void setTwos(Integer[] diceValues){
         twos = calculateUpperScores(diceValues, 2);
     }
 
-    public void setThrees(int[] diceValues) {
+    public void setThrees(Integer[] diceValues){
         threes = calculateUpperScores(diceValues, 3);
     }
 
-    public void setFours(int[] diceValues) {
+    public void setFours(Integer[] diceValues){
         fours = calculateUpperScores(diceValues, 4);
     }
 
-    public void setFives(int[] diceValues) {
+    public void setFives(Integer[] diceValues){
         fives = calculateUpperScores(diceValues, 5);
     }
 
-    public void setSixes(int[] diceValues) {
+    public void setSixes(Integer[] diceValues){
         sixes = calculateUpperScores(diceValues, 6);
     }
 
-
-    private int countNumberOfAKind(int[] diceValues, int faceValue){
-        int count = 0;
+    private Integer countNumberOfAKind(Integer[] diceValues, Integer faceValue){
+        Integer count = 0;
         for (int i = 0; i < 5; i++){
             if (diceValues[i] == faceValue) count = count + 1;
         }
         return count;
     }
 
-    private int getSumOfDice(int[] diceValues){
-        int sum = 0;
+    private Integer getSumOfDice(Integer[] diceValues){
+        Integer sum = 0;
         for (int i=0; i <5; i++){
             sum = sum + diceValues[i];
         }
         return sum;
     }
-    public void setThreeOfAKind(int[] diceValues) {
+
+    public void setThreeOfAKind(Integer[] diceValues) {
         for (int i=1; i <= 6; i++) {
             if (countNumberOfAKind(diceValues, i) >= 3) {
                 threeOfAKind = getSumOfDice(diceValues);
@@ -185,7 +186,7 @@ public class ScoreCard {
         } if (threeOfAKind==null) threeOfAKind = 0;
     }
 
-    public void setFourOfAKind(int[] diceValues) {
+    public void setFourOfAKind(Integer[] diceValues) {
         for (int i=1; i <= 6; i++) {
             if (countNumberOfAKind(diceValues, i) >= 4) {
                 fourOfAKind = getSumOfDice(diceValues);
@@ -194,10 +195,10 @@ public class ScoreCard {
         } if (fourOfAKind == null) fourOfAKind = 0;
     }
 
-    public void setFullHouse(int[] diceValues) {
+    public void setFullHouse(Integer[] diceValues) {
         // three of a kind and two of a kind
-        boolean match3=false;
-        boolean match2 =false;
+        boolean match3 = false;
+        boolean match2 = false;
         for (int i=1; i<=6; i++) {
             if(countNumberOfAKind(diceValues, i) == 3) {
                 match3 = true;
@@ -210,7 +211,7 @@ public class ScoreCard {
         else fullHouse = 0;
     }
 
-    public void setSmallStraight(int[] diceValues) {
+    public void setSmallStraight(Integer[] diceValues) {
         List<Integer> straight1 = List.of(1,2,3,4);
         List<Integer> straight2 = List.of(2,3,4,5);
         List<Integer> straight3 = List.of(3,4,5,6);
@@ -222,7 +223,7 @@ public class ScoreCard {
         } else smallStraight = 0;
     }
 
-    public void setLargeStraight(int[] diceValues) {
+    public void setLargeStraight(Integer[] diceValues) {
         List<Integer> straight1 = List.of(1,2,3,4,5);
         List<Integer> straight2 = List.of(2,3,4,5,6);
         Arrays.sort(diceValues);
@@ -232,23 +233,23 @@ public class ScoreCard {
         } else largeStraight = 0;
     }
 
-    public void setYahtzee(int[] diceValues) {
+    public void setYahtzee(Integer[] diceValues) {
         if (countNumberOfAKind(diceValues, diceValues[0])==5) yahtzee = 50;
         else yahtzee = 0;
     }
 
-    public void setChance(int[] diceValues) {
+    public void setChance(Integer[] diceValues) {
         chance = getSumOfDice(diceValues);
     }
 
-    public void setYahtzeeBonuses(int[] diceValues) {
+    public void setYahtzeeBonuses(Integer[] diceValues) {
         if (yahtzeeBonuses==null) yahtzeeBonuses = 0;
         if (countNumberOfAKind(diceValues, diceValues[0])==5 && yahtzee==50) {
             yahtzeeBonuses = yahtzeeBonuses + 1;
         }
     }
 
-    public void setScore(int section, int[] diceValues){
+    public void setScore(int section, Integer[] diceValues){
         switch (section) {
             case 1: setAces(diceValues); break;
             case 2: setTwos(diceValues); break;
