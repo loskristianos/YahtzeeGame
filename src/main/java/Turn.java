@@ -5,6 +5,8 @@
     second/third roll. After the third roll the five dice must be used for scoring.
  */
 
+import java.util.List;
+
 public class Turn {
 
     private Player player;
@@ -67,9 +69,9 @@ public class Turn {
         updateDiceValues();
     }
 
-    public void nextRoll(Integer[] diceToRoll){
-        for (int i=0; i < diceToRoll.length; i++){
-            switch (diceToRoll[i]){
+    public void nextRoll(List<Integer> diceToRoll){
+        for (Integer dice : diceToRoll){
+            switch (dice){
                 case 1: dice1.roll();
                 case 2: dice2.roll();
                 case 3: dice3.roll();
