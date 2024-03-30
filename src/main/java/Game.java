@@ -35,16 +35,10 @@ public class Game {
             turn.firstRoll();
             userDisplay.displayDice(turn.getDiceValues());
             if (userPrompt.rollAgain().equals("y")) {
-                if (userPrompt.holdDice().equals("y")) {
-                    turn.holdDice(userPrompt.chooseDice());
-                }
-                turn.secondRoll();
+                turn.nextRoll(userPrompt.chooseDiceToRoll());
                 userDisplay.displayDice(turn.getDiceValues());
                 if (userPrompt.rollAgain().equals("y")) {
-                    if (userPrompt.holdDice().equals("y")) {
-                        turn.holdDice(userPrompt.chooseDice());
-                    }
-                    turn.thirdRoll();
+                    turn.nextRoll(userPrompt.chooseDiceToRoll());
                     userDisplay.displayDice(turn.getDiceValues());
                 }
             }
