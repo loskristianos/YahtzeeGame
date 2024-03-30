@@ -72,11 +72,11 @@ public class Turn {
     public void nextRoll(List<Integer> diceToRoll){
         for (Integer dice : diceToRoll){
             switch (dice){
-                case 1: dice1.roll();
-                case 2: dice2.roll();
-                case 3: dice3.roll();
-                case 4: dice4.roll();
-                case 5: dice5.roll();
+                case 1: dice1.roll(); break;
+                case 2: dice2.roll(); break;
+                case 3: dice3.roll(); break;
+                case 4: dice4.roll(); break;
+                case 5: dice5.roll(); break;
             }
         }
         updateDiceValues();
