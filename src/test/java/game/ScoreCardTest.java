@@ -8,7 +8,7 @@ class ScoreCardTest {
 
     @Test
     void setAces() {
-        int[] acesTest = new int[]{1,4,5,1,3};
+        Integer[] acesTest = new Integer[]{1,4,5,1,3};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setAces(acesTest);
         assertEquals(2, testCard.getAces());
@@ -16,7 +16,7 @@ class ScoreCardTest {
 
     @Test
     void setAcesZero(){
-        int[] acesZero = new int[]{2,6,4,2,2};
+        Integer[] acesZero = new Integer[]{2,6,4,2,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setAces(acesZero);
         assertEquals(0, testCard.getAces());
@@ -24,7 +24,7 @@ class ScoreCardTest {
 
     @Test
     void setTwos() {
-        int[] twosTest = new int[]{2,6,4,2,2};
+        Integer[] twosTest = new Integer[]{2,6,4,2,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setTwos(twosTest);
         assertEquals(6, testCard.getTwos());
@@ -32,7 +32,7 @@ class ScoreCardTest {
 
     @Test
     void setThrees() {
-        int[] threesTest = new int[]{2,1,4,2,3};
+        Integer[] threesTest = new Integer[]{2,1,4,2,3};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setThrees(threesTest);
         assertEquals(3, testCard.getThrees());
@@ -40,7 +40,7 @@ class ScoreCardTest {
 
     @Test
     void setFours() {
-        int[] foursTest = new int[]{4,6,4,2,2};
+        Integer[] foursTest = new Integer[]{4,6,4,2,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setFours(foursTest);
         assertEquals(8, testCard.getFours());
@@ -48,7 +48,7 @@ class ScoreCardTest {
 
     @Test
     void setFives() {
-        int[] fivesTest = new int[]{2,5,5,2,5};
+        Integer[] fivesTest = new Integer[]{2,5,5,2,5};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setFives(fivesTest);
         assertEquals(15, testCard.getFives());
@@ -56,7 +56,7 @@ class ScoreCardTest {
 
     @Test
     void setSixes() {
-        int[] sixesTest = new int[]{2,6,4,2,2};
+        Integer[] sixesTest = new Integer[]{2,6,4,2,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setSixes(sixesTest);
         assertEquals(6, testCard.getSixes());
@@ -64,7 +64,7 @@ class ScoreCardTest {
 
     @Test
     void setThreeOfAKind() {
-        int[] threeOfAKindTest = new int[]{2,5,2,4,2};
+        Integer[] threeOfAKindTest = new Integer[]{2,5,2,4,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setThreeOfAKind(threeOfAKindTest);
         assertEquals(15, testCard.getThreeOfAKind());
@@ -72,7 +72,7 @@ class ScoreCardTest {
 
     @Test
     void setThreeOfAKindFail() {
-        int[] threeOfAKindTest = new int[]{2,5,1,4,2};
+        Integer[] threeOfAKindTest = new Integer[]{2,5,1,4,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setThreeOfAKind(threeOfAKindTest);
         assertEquals(0, testCard.getThreeOfAKind());
@@ -80,7 +80,7 @@ class ScoreCardTest {
 
     @Test
     void setFourOfAKind() {
-        int[] fourOfAKindTest = new int[]{1,1,3,1,1};
+        Integer[] fourOfAKindTest = new Integer[]{1,1,3,1,1};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setFourOfAKind(fourOfAKindTest);
         assertEquals(7, testCard.getFourOfAKind());
@@ -88,7 +88,7 @@ class ScoreCardTest {
 
     @Test
     void setFourOfAKindFail() {
-        int[] fourOfAKindTest = new int[]{2,5,1,4,2};
+        Integer[] fourOfAKindTest = new Integer[]{2,5,1,4,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setFourOfAKind(fourOfAKindTest);
         assertEquals(0, testCard.getFourOfAKind());
@@ -96,7 +96,7 @@ class ScoreCardTest {
 
     @Test
     void setFullHouse() {
-        int[] fullHouse = new int[]{4,3,4,4,3};
+        Integer[] fullHouse = new Integer[]{4,3,4,4,3};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setFullHouse(fullHouse);
         assertEquals(25, testCard.getFullHouse());
@@ -104,7 +104,7 @@ class ScoreCardTest {
 
     @Test
     void setFullHouseFail() {
-        int[] fullHouse = new int[]{1,3,4,4,3};
+        Integer[] fullHouse = new Integer[]{1,3,4,4,3};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setFullHouse(fullHouse);
         assertEquals(0, testCard.getFullHouse());
@@ -112,7 +112,7 @@ class ScoreCardTest {
 
     @Test
     void setFullHouseFail2() {
-        int[] fullHouse = new int[]{3,3,3,3,3};
+        Integer[] fullHouse = new Integer[]{3,3,3,3,3};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setFullHouse(fullHouse);
         assertEquals(0, testCard.getFullHouse());
@@ -120,7 +120,7 @@ class ScoreCardTest {
 
     @Test
     void setSmallStraight() {
-        int[] smallStraight = new int[]{1,6,3,2,4};
+        Integer[] smallStraight = new Integer[]{1,6,3,2,4};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setSmallStraight(smallStraight);
         assertEquals(30, testCard.getSmallStraight());
@@ -128,7 +128,7 @@ class ScoreCardTest {
 
     @Test
     void setLargeStraight() {
-        int[] largeStraight = new int[]{6,2,4,3,5};
+        Integer[] largeStraight = new Integer[]{6,2,4,3,5};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setLargeStraight(largeStraight);
         assertEquals(40, testCard.getLargeStraight());
@@ -136,7 +136,7 @@ class ScoreCardTest {
 
     @Test
     void setYahtzee() {
-        int[] yahtzee = new int[]{5,5,5,5,5};
+        Integer[] yahtzee = new Integer[]{5,5,5,5,5};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setYahtzee(yahtzee);
         assertEquals(50, testCard.getYahtzee());
@@ -144,7 +144,7 @@ class ScoreCardTest {
 
     @Test
     void setChance() {
-        int[] chance = new int[]{4,4,6,2,1};
+        Integer[] chance = new Integer[]{4,4,6,2,1};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setChance(chance);
         assertEquals(17, testCard.getChance());
@@ -152,12 +152,12 @@ class ScoreCardTest {
 
     @Test
     void setYahtzeeBonuses() {
-        int[] yahtzee = new int[]{5,5,5,5,5};
-        int[] yahtzee1 = new int[]{2,2,2,2,2};
+        Integer[] yahtzee = new Integer[]{5,5,5,5,5};
+        Integer[] yahtzee1 = new Integer[]{2,2,2,2,2};
         ScoreCard testCard = ScoreCard.newScoreCard();
         testCard.setYahtzee(yahtzee);
         assertEquals(50, testCard.getYahtzee());
-        assertNull(testCard.getYahtzeeBonuses());
+        assertEquals(0,testCard.getYahtzeeBonuses());
         testCard.setYahtzeeBonuses(yahtzee1);
         assertEquals(1, testCard.getYahtzeeBonuses());
     }

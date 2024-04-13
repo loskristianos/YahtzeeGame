@@ -2,6 +2,9 @@ package game;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TurnTest {
@@ -48,7 +51,7 @@ class TurnTest {
     void secondRoll() {
         Player x = Player.startNewGame();
         Turn turn = Turn.startNewTurn(x);
-        Integer[] diceToRoll = new Integer[]{1,2,3,4,5};
+        List<Integer> diceToRoll = new ArrayList<Integer>() {{add(1);add(2);add(3);add(4);add(5);}};
         turn.firstRoll();
         turn.nextRoll(diceToRoll);
         assertEquals(2, turn.getRollCount());
@@ -59,7 +62,7 @@ class TurnTest {
     void thirdRoll() {
         Player x = Player.startNewGame();
         Turn turn = Turn.startNewTurn(x);
-        Integer[] diceToRoll = new Integer[]{1,2,3,4,5};
+        List<Integer> diceToRoll = new ArrayList<Integer>(){{add(1);add(2);add(3);add(4);add(5);}};
         turn.firstRoll();
         turn.nextRoll(diceToRoll);
         turn.nextRoll(diceToRoll);
