@@ -1,3 +1,8 @@
+package game;
+
+import cli.UserDisplay;
+import cli.UserPrompt;
+
 public class Game {
 
     int turnCount;

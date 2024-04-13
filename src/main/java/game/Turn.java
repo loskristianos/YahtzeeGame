@@ -1,5 +1,5 @@
-/*
-    For each turn (a new Turn instance per player's turn) player has three rolls of the dice;
+package game;/*
+    For each turn (a new game.Turn instance per player's turn) player has three rolls of the dice;
     after each roll the player can choose whether to re-roll all five dice, keep the five
     dice to score with, or keep 1-4 dice as they are and roll the remaining dice for the
     second/third roll. After the third roll the five dice must be used for scoring.

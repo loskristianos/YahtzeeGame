@@ -1,3 +1,6 @@
+
+package game;
+
 public class DiceFactory {
 
     private DiceFactory(){}

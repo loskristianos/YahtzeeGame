@@ -1,13 +1,14 @@
-import java.util.Arrays;
+package cli;
+import game.*;
 
 public class UserDisplay {
 
     public void displayDice(Turn turn){
-        System.out.println("Dice 1: " + turn.getDice1Value());
-        System.out.println("Dice 2: " + turn.getDice2Value());
-        System.out.println("Dice 3: " + turn.getDice3Value());
-        System.out.println("Dice 4: " + turn.getDice4Value());
-        System.out.println("Dice 5: " + turn.getDice5Value());
+        System.out.println("game.Dice 1: " + turn.getDice1Value());
+        System.out.println("game.Dice 2: " + turn.getDice2Value());
+        System.out.println("game.Dice 3: " + turn.getDice3Value());
+        System.out.println("game.Dice 4: " + turn.getDice4Value());
+        System.out.println("game.Dice 5: " + turn.getDice5Value());
     }
 
     public void displayScoreCard(ScoreCard scoreCard){
