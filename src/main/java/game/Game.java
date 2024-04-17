@@ -31,6 +31,10 @@ public class Game {
         turnCount = count;
     }
 
+    public int getTurnCount(){
+        return turnCount;
+    }
+
     public void play(){
         UserDisplay userDisplay = new UserDisplay();
         UserPrompt userPrompt = new UserPrompt();

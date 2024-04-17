@@ -3,6 +3,9 @@ import game.*;
 
 public class UserDisplay {
 
+    public void displayTurnDetails(Game game) {
+        System.out.println("Turn number" + game.getTurnCount() + "of 13.");
+    }
     public void displayDice(Turn turn){
         System.out.println("Dice 1: " + turn.getDice1Value());
         System.out.println("Dice 2: " + turn.getDice2Value());
