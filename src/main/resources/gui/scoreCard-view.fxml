@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ScoreCardView">
+   <children>
+      <GridPane prefHeight="600.0" prefWidth="400.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="UPPER SECTION" />
+            <Label text="HOW TO SCORE" GridPane.columnIndex="1" />
+            <Label text="Aces" GridPane.rowIndex="1" />
+            <Label text="Label" />
+            <Label text="Twos" GridPane.rowIndex="2" />
+            <Label text="Threes" GridPane.rowIndex="3" />
+            <Label text="Fours" GridPane.rowIndex="4" />
+            <Label text="Fives" GridPane.rowIndex="5" />
+            <Label text="Sixes" GridPane.rowIndex="6" />
+            <Label text="TOTAL SCORE" GridPane.rowIndex="7" />
+            <Label text="BONUS (if total is 63 or over)" GridPane.rowIndex="8" />
+            <Label text="TOTAL of upper section" GridPane.rowIndex="9" />
+            <Label text="LOWER SECTION" GridPane.rowIndex="11" />
+            <Label text="3 of a kind" GridPane.rowIndex="12" />
+            <Label text="4 of a kind" GridPane.rowIndex="13" />
+            <Label text="Full House" GridPane.rowIndex="14" />
+            <Label text="Small Straight" GridPane.rowIndex="15" />
+            <Label text="Large Straight" GridPane.rowIndex="16" />
+            <Label text="Yahtzee" GridPane.rowIndex="17" />
+            <Label text="Chance" GridPane.rowIndex="18" />
+            <Label text="Yahtzee Bonus" GridPane.rowIndex="19" />
+            <Label text="TOTAL of lower section" GridPane.rowIndex="20" />
+            <Label text="TOTAL of upper section" GridPane.rowIndex="21" />
+            <Label text="GRAND TOTAL" GridPane.rowIndex="22" />
+            <Label text="Count and add only aces" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Count and add only twos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Count and add only threes" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Count and add only fours" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Count and add only fives" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Count and add only sixes" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="SCORE 35" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Add total of all dice" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label text="Add total of all dice" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <Label text="SCORE 25" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <Label text="SCORE 30" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+            <Label text="SCORE 40" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+            <Label text="SCORE 50" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+            <Label text="Add total of all dice" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+            <Label text="Score 100 for each extra yahtzee" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
