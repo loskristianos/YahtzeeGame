@@ -40,7 +40,6 @@
             <Label text="UPPER SECTION" />
             <Label text="HOW TO SCORE" GridPane.columnIndex="1" />
             <Label text="Aces" GridPane.rowIndex="1" />
-            <Label text="Label" />
             <Label text="Twos" GridPane.rowIndex="2" />
             <Label text="Threes" GridPane.rowIndex="3" />
             <Label text="Fours" GridPane.rowIndex="4" />
@@ -76,6 +75,25 @@
             <Label text="SCORE 50" GridPane.columnIndex="1" GridPane.rowIndex="17" />
             <Label text="Add total of all dice" GridPane.columnIndex="1" GridPane.rowIndex="18" />
             <Label text="Score 100 for each extra yahtzee" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+            <Label fx:id="aces" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="twos" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="threes" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="fours" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label fx:id="fives" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label fx:id="sixes" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label fx:id="upperScore" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label fx:id="upperBonus" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label fx:id="upperTotal" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <Label fx:id="threeOfAKind" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+            <Label fx:id="fourOfAKind" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+            <Label fx:id="fullHouse" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+            <Label fx:id="smallStraight" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+            <Label fx:id="largeStraight" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+            <Label fx:id="yahtzee" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+            <Label fx:id="chance" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+            <Label fx:id="yahtzeeBonus" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+            <Label fx:id="lowerTotal" GridPane.columnIndex="2" GridPane.rowIndex="20" />
+            <Label fx:id="grandTotal" GridPane.columnIndex="2" GridPane.rowIndex="22" />
          </children>
       </GridPane>
    </children>
