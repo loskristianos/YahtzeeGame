@@ -3,7 +3,7 @@ package gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class ScoreCardView {
+public class ScoreCardController {
 
     @FXML private Label aces;
     @FXML private Label twos;
@@ -24,6 +24,8 @@ public class ScoreCardView {
     @FXML private Label yahtzeeBonus;
     @FXML private Label lowerTotal;
     @FXML private Label grandTotal;
+
+
 
 
 }
