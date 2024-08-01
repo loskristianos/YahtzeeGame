@@ -25,6 +25,10 @@ public class ScoreCardController {
     @FXML private Label lowerTotal;
     @FXML private Label grandTotal;
 
+    public ScoreCardController(){}
+
+    @FXML private void initialize(){}
+
 
 
 
