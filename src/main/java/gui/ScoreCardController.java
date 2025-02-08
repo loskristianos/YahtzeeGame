@@ -29,6 +29,9 @@ public class ScoreCardController {
 
     @FXML private void initialize(){}
 
+    private void setLabelScore (Label x, Integer score) {
+        x.setText(score.toString());
+    }
 
 
 
